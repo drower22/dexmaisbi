@@ -54,6 +54,9 @@ export const BIFiltersPanel: React.FC<BIFiltersPanelProps> = ({
   onFiltersChange,
 }) => {
   const handleMarketplaceToggle = (marketplace: MarketplaceFilter) => {
+    // Filtrar "all" pois não é um Marketplace válido, apenas um filtro de UI
+    if (marketplace === 'all') return;
+    
     const current = filters.marketplaces || [];
     const newMarketplaces = current.includes(marketplace)
       ? current.filter(m => m !== marketplace)
@@ -234,7 +237,7 @@ export const BIFiltersPanel: React.FC<BIFiltersPanelProps> = ({
             </label>
             <div className="space-y-2">
               {MARKETPLACE_OPTIONS.map((option) => {
-                const isSelected = filters.marketplaces?.includes(option.value) || false;
+                const isSelected = option.value !== 'all' && (filters.marketplaces?.includes(option.value) || false);
                 return (
                   <label
                     key={option.value}

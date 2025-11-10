@@ -427,7 +427,7 @@ export const StoreDetailPage: React.FC = () => {
                       <YAxis 
                         tick={{ fontSize: 12 }}
                         stroke="#6b7280"
-                        tickFormatter={(value) => `R$ ${(value / 1000).toFixed(0)}k`}
+                        tickFormatter={(value: number) => `R$ ${(value / 1000).toFixed(0)}k`}
                       />
                       <Tooltip 
                         contentStyle={{ 
@@ -477,7 +477,7 @@ export const StoreDetailPage: React.FC = () => {
                       <YAxis 
                         tick={{ fontSize: 12 }}
                         stroke="#6b7280"
-                        tickFormatter={(value) => `R$ ${value.toFixed(0)}`}
+                        tickFormatter={(value: number) => `R$ ${value.toFixed(0)}`}
                       />
                       <Tooltip 
                         contentStyle={{ 
@@ -527,7 +527,7 @@ export const StoreDetailPage: React.FC = () => {
                       <YAxis 
                         tick={{ fontSize: 12 }}
                         stroke="#6b7280"
-                        tickFormatter={(value) => `R$ ${(value / 1000).toFixed(0)}k`}
+                        tickFormatter={(value: number) => `R$ ${(value / 1000).toFixed(0)}k`}
                       />
                       <Tooltip 
                         contentStyle={{ 
