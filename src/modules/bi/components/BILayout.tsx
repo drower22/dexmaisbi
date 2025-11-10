@@ -1,6 +1,7 @@
 import React, { type ReactNode } from 'react';
 import { MonitorSmartphone } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import dexLogo from '../../../assets/dex-logo.png';
 
 type BILayoutProps = {
   children: ReactNode;
@@ -31,7 +32,7 @@ export const BILayout: React.FC<BILayoutProps> = ({ children, title, subtitle })
         {/* Topbar roxa (fixa no topo) */}
         <header className="bg-brand-purple-dark sticky top-0 z-30 shadow-sm">
           <div className="flex items-center justify-between h-20 px-6">
-            <h1 className="text-2xl font-bold font-sora text-white">Dex+ BI</h1>
+            <img src={dexLogo} alt="Dex Parceiros" className="h-12 md:h-14 w-auto cursor-pointer" onClick={() => navigate('/bi')} />
             <button
               type="button"
               className="px-3 py-2 text-sm rounded-md bg-brand-purple-light text-brand-purple-dark hover:bg-brand-purple-light/90"
