@@ -1,0 +1,79 @@
+/* Estilos de impressão para o relatório */
+@media print {
+  /* Configurações da página */
+  @page {
+    size: A4 portrait;
+    margin: 15mm;
+  }
+  
+  /* Reset do body */
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+  
+  /* Ocultar tudo que não é o relatório */
+  body > *:not(#root),
+  #root > *:not(.print-report) {
+    display: none !important;
+  }
+  
+  /* Mostrar apenas o modal do relatório */
+  .print-report {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: none !important;
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Ocultar toolbar e fundo cinza */
+  .print-report > div > div:first-child,
+  .print-report > div > div:last-child {
+    display: none !important;
+  }
+  
+  /* Mostrar apenas o conteúdo do relatório */
+  #report-content {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    box-shadow: none !important;
+    min-height: auto !important;
+  }
+  
+  /* Ajustar espaçamento interno */
+  #report-content > div {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Ajustar cores para impressão */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Remover bordas arredondadas e sombras */
+  * {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  
+  /* Garantir que o conteúdo não quebre entre páginas */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid !important;
+  }
+  
+  /* Evitar quebra de página dentro de elementos importantes */
+  .space-y-6 > div {
+    page-break-inside: avoid !important;
+  }
+}
