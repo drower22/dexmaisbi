@@ -1,11 +1,78 @@
-# React + TypeScript + Vite
+# Dex+ BI Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação standalone do módulo BI com dados mock para demonstração.
 
-Currently, two official plugins are available:
+## 🚀 Deploy na Vercel
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Passo 1: Importar repositório
+1. Acesse [vercel.com](https://vercel.com)
+2. Clique em "Add New" → "Project"
+3. Importe o repositório `drower22/dexmaisbi`
+
+### Passo 2: Configurar projeto
+- **Framework Preset**: Vite
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+- **Install Command**: `npm install`
+
+### Passo 3: Configurar domínio (opcional)
+- Após o deploy, vá em "Settings" → "Domains"
+- Adicione `demo.usa-dex.com.br`
+- Configure o DNS conforme instruções da Vercel
+
+## 🛠️ Desenvolvimento Local
+
+```bash
+# Instalar dependências
+npm install
+
+# Rodar em desenvolvimento
+npm run dev
+
+# Build para produção
+npm run build
+
+# Preview do build
+npm run preview
+```
+
+## 📦 Estrutura
+
+```
+src/
+├── modules/bi/          # Módulo BI completo (snapshot)
+│   ├── components/      # BILayout, BIFiltersPanel, etc
+│   ├── pages/           # BIDashboardPage, StoreDetailPage
+│   ├── services/        # datasource.ts, mock.service.ts
+│   └── types/           # Tipos TypeScript
+├── App.tsx              # Rotas principais
+└── main.tsx             # Entry point
+```
+
+## 🎨 Tecnologias
+
+- **React 18** + TypeScript
+- **Vite** (build tool)
+- **Tailwind CSS** (estilização)
+- **React Router** (rotas)
+- **Lucide React** (ícones)
+
+## 📊 Dados
+
+Todos os dados são **mockados** via `mock.service.ts`. Ideal para demonstração sem necessidade de backend.
+
+## 🔄 Evolução Futura
+
+Quando adicionar lógica real no projeto principal:
+- Este repositório permanece com mocks (demo)
+- Projeto principal evolui independentemente
+- Snapshot isolado garante estabilidade da demo
+
+## 📝 Notas
+
+- **Modo demo**: Sempre ativo (dados mock)
+- **Sem autenticação**: Acesso direto ao dashboard
+- **Sem Supabase**: Não requer configuração de banco
 
 ## React Compiler
 
