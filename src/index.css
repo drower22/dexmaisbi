@@ -4,14 +4,45 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f9fafb;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 285 100% 18%;
+ 
+    --card: 0 0% 100%;
+    --card-foreground: 285 100% 18%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 285 100% 18%;
+ 
+    --primary: 285 100% 18%;
+    --primary-foreground: 0 0% 98%;
+ 
+    --secondary: 273 30% 94%;
+    --secondary-foreground: 285 100% 18%;
+ 
+    --muted: 273 30% 94%;
+    --muted-foreground: 273 30% 40%;
+ 
+    --accent: 273 30% 94%;
+    --accent-foreground: 285 100% 18%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 273 30% 88%;
+    --input: 273 30% 88%;
+    --ring: 285 100% 18%;
+ 
+    --radius: 0.5rem;
+  }
 }
 
-* {
-  box-sizing: border-box;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
